@@ -30,7 +30,7 @@ urlpatterns = patterns('',
             }
         },
         name='login'),
-    url(r'^logout$',
+        url(r'^logout$',
         'django.contrib.auth.views.logout',
         {
             'next_page': '/',
