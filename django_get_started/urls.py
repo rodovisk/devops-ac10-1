@@ -29,8 +29,8 @@ urlpatterns = patterns('',
                 'year':datetime.now().year,
             }
         }
-        name='login',
-        url(r'^logout$'),
+        name='login'),
+     url(r'^logout$'),
         'django.contrib.auth.views.logout',
         {
             'next_page': '/',
