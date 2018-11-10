@@ -69,10 +69,10 @@ def cadastro_vestibulares(request):
     assert isinstance(request, HttpRequest)
     return render(
     request,
-    "app/cadastro_vestibulares.html’,
+    "app/cadastro_vestibulares.html",
     context_instance = RequestContext(request,
     {
-     "title":"Cadastro de vestibulares’,
+     "title":"Cadastro de vestibulares",
      "vestibulares": Vestibular.objects.all(),
      "year":datetime.now().year,
     })
