@@ -15,7 +15,7 @@ urlpatterns = patterns("",
     # Examples:
     url(r"^$", "app.views.home", name="home"),
     url(r"^contact$", "app.views.contact", name="contact"),
-    url(r"^about", "app.views.abou"t, name="about"),
+    url(r"^about", "app.views.about", name="about"),
     url(r"^cadastro_cursos", "app.views.cadastro_cursos", name="cadastro_cursos"),
     url(r"^login/$"),
     url(r"^cadastro_vestibulares", "app.views.cadastro_vestibulares", name="cadastro_vestibulares"),
