@@ -11,32 +11,31 @@ from app.forms import BootstrapAuthenticationForm
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns("",
     # Examples:
-    url(r'^$', 'app.views.home', name='home'),
-    url(r'^contact$', 'app.views.contact', name='contact'),
-    url(r'^about', 'app.views.about', name='about'),
-    url(r'^cadastro_cursos', 'app.views.cadastro_cursos', name='cadastro_cursos'),
-    url(r'^login/$'),
-    url(r'^cadastro_vestibulares', 'app.views.cadastro_vestibulares’,
-    name='cadastro_vestibulares'),
-        'django.contrib.auth.views.login',
+    url(r"^$", "app.views.home", name="home"),
+    url(r"^contact$", "app.views.contact", name="contact"),
+    url(r"^about", "app.views.about", name="about"),
+    url(r"^cadastro_cursos", "app.views.cadastro_cursos", name="cadastro_cursos"),
+    url(r"^login/$"),
+    url(r"^cadastro_vestibulares", "app.views.cadastro_vestibulares", name="cadastro_vestibulares"),
+        "django.contrib.auth.views.login",
         {
-            'template_name': 'app/login.html',
-            'authentication_form': BootstrapAuthenticationForm,
-            'extra_context':
+            "template_name": "app/login.html",
+            "authentication_form": BootstrapAuthenticationForm,
+            "extra_context":
             {
-                'title':'Log in',
-                'year':datetime.now().year,
+                "title":"Log in",
+                "year":datetime.now().year,
             }
-        },
-        name='login'),
-    url(r'^logout$',
-        'django.contrib.auth.views.logout',
+        }
+		(name="login"),
+    url(r"^logout$",
+        "django.contrib.auth.views.logout",
         {
-            'next_page': '/',
+            "next_page": "/",
         },
-        name='logout'),
+        name="logout"),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
