@@ -32,9 +32,9 @@ urlpatterns = patterns("",
 		(name="login"),
     url(r"^logout$",
         "django.contrib.auth.views.logout",
-        {
+        (
             "next_page": "/",
-        }
+	)
         (name="logout"),
 
     # Uncomment the admin/doc line below to enable admin documentation:
