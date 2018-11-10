@@ -13,13 +13,13 @@ from app.forms import BootstrapAuthenticationForm
 
 urlpatterns = patterns("",
     # Examples:
-	url(r"^$", "app.views.home", name="home"),
-    	url(r"^contact$", "app.views.contact", name="contact"),
-    	url(r"^about", "app.views.about", name="about"),
-    	url(r"^cadastro_cursos", "app.views.cadastro_cursos", name="cadastro_cursos"),
-    	url(r"^cadastro_vestibulares", "app.views.cadastro_vestibulares", name="cadastro_vestibulares"),
-	url(r"^login/$")
-            ("django.contrib.auth.views.login"),
+    url(r"^$", "app.views.home", name="home"),
+    url(r"^contact$", "app.views.contact", name="contact"),
+    url(r"^about", "app.views.about", name="about"),
+    url(r"^cadastro_cursos", "app.views.cadastro_cursos", name="cadastro_cursos"),
+	url(r"^cadastro_vestibulares", "app.views.cadastro_vestibulares", name="cadastro_vestibulares"),
+    url(r"^login/$",
+        "django.contrib.auth.views.login",
         {
             "template_name": "app/login.html",
             "authentication_form": BootstrapAuthenticationForm,
@@ -28,18 +28,18 @@ urlpatterns = patterns("",
                 "title":"Log in",
                 "year":datetime.now().year,
             }
-        }
-		(name="login"),
+        },
+        name="login"),
     url(r"^logout$",
         "django.contrib.auth.views.logout",
-        (
-            ("next_page": "/"),
-	)
-        (name="logout"),
+        {
+            "next_page": "/",
+        },
+        name="logout"),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # url(r"^admin/doc/", include("django.contrib.admindocs.urls")),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    # url(r"^admin/", include(admin.site.urls)),
 )
