@@ -57,7 +57,7 @@ def cadastro_cursos(request):
         context_instance = RequestContext(request,
         {
             'title':'Cadastro de cursos',
-#            'cursos': ['ADS' , 'SI', 'CC'],
+#           'cursos': ['ADS' , 'SI', 'CC'],
             'cursos': Curso.objects.all(),
             'year':datetime.now().year,
             
@@ -67,13 +67,13 @@ def cadastro_cursos(request):
 
 def cadastro_vestibulares(request): 
 	assert isinstance(request, HttpRequest)
-    return render(
-    request,
-    'app/cadastro_vestibulares.html’,
-    context_instance = RequestContext(request,
-    {
-     'title':'Cadastro de vestibulares’,
-     'vestibulares': Vestibular.objects.all(),
-     'year':datetime.now().year,
-    })
+    	return render(
+    	    request,
+    	    'app/cadastro_vestibulares.html’,
+    	    context_instance = RequestContext(request,
+    	{
+     	 'title':'Cadastro de vestibulares’,
+     	 'vestibulares': Vestibular.objects.all(),
+     	 'year':datetime.now().year,
+    	})
 )
