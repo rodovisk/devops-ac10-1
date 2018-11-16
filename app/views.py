@@ -5,7 +5,7 @@ Definition of views.
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
-from app.models import candidatos, candidatos
+from app.models import cursos, candidatos
 from datetime import datetime
 
 def home(request):
