@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from app.models import cursos 
+from app.models import candidatos
 from datetime import datetime
 
 def home(request):
